@@ -17,6 +17,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #e7fbfc;
+  background-image: url(/images/backround1.png);
 }
 
 nav {
@@ -295,6 +296,7 @@ button:focus-visible {
   margin-bottom: 20px;
   margin-left: 20px;
   max-width: 80%;
+  background-color: #dbe7ed;
 }
 
 .calendar header {
@@ -370,7 +372,8 @@ button:focus-visible {
   cursor: pointer;
 }
 
-#survey-form {
+#survey-form-mental,
+#survey-form-physical {
   color: #00080c;
   width: 100%;
 }
@@ -390,11 +393,11 @@ button[type="submit"] {
 .checkbox-group {
   display: flex;
   align-items: center;
-  margin-bottom: 10px; /* Lisää väliä riveille */
+  margin-bottom: 10px;
 }
 
 .checkbox-group label {
-  margin-right: 10px; /* Lisää tilaa labelin ja checkboxin välille */
+  margin-right: 10px; 
 }
 
 input[type="checkbox"] {

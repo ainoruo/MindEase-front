@@ -70,26 +70,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Oirearviokyselyn toiminnallisuudet
+const surveyModal = document.getElementById("survey-modal");
+const formMental = document.getElementById('survey-form-mental');
+const formPhysical = document.getElementById('survey-form-physical');
 const button = document.getElementById("openArvioKyselyModal");
+const closeButton = document.querySelector(".close-button");
 
 button.onclick = function() {
   surveyModal.style.display = "block";
-}
+  formMental.style.display = "block"; 
+  formPhysical.style.display = "none";
+};
 
-const form = document.getElementById("survey-form");
-form.addEventListener("submit", submitForm);
+document.querySelector('.next-button').addEventListener('click', function() {
+  formMental.style.display = 'none';
+  formPhysical.style.display = 'block';
+});
 
-const surveyModal = document.getElementById("survey-modal");
-const closeButton = document.querySelector(".close-button");
+document.querySelector('.prev-button').addEventListener('click', function() {
+  formPhysical.style.display = 'none';
+  formMental.style.display = 'block';
+});
+
 
 closeButton.onclick = () => (surveyModal.style.display = "none");
+
 window.onclick = (event) => {
   if (event.target === surveyModal) {
     surveyModal.style.display = "none";
   }
 };
 
-function submitForm() {
+formMental.addEventListener("submit", submitForm1);
+
+function submitForm1() {
   console.log("toimii");
 }
 
@@ -100,7 +115,7 @@ button2.onclick = function() {
 }
 
 const form2 = document.getElementById("sleep-form");
-form2.addEventListener("submit", submitSleepForm);
+form2.addEventListener("submit", submitForm2);
 
 const sleepModal = document.getElementById("sleep-modal");
 const closeButton2 = document.querySelector(".close-button2");
@@ -109,6 +124,6 @@ closeButton2.onclick = () => {
     sleepModal.style.display = "none";
 };
 
-function submitSleepForm() {
-  console.log("sleep modal toimii");
+function submitForm2() {
+  console.log("elämantapa modal toimii");
 }
